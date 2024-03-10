@@ -1,13 +1,14 @@
 ﻿using Dapper;
 using RealEstate_DapperApi_AbdulkadirArslan.Dtos.BottomGridDtos;
-using RealEstate_DapperApi_AbdulkadirArslan.Dtos.ProductDtos;
+using RealEstate_DapperApi_AbdulkadirArslan.Dtos.CategoryDtos;
 using RealEstate_DapperApi_AbdulkadirArslan.Models.DapperContext;
 using RealEstate_DapperApi_AbdulkadirArslan.Repositories.BottomGridRepository;
 
-namespace RealEstate_DapperApi_AbdulkadirArslan.Repositories.ServiceRepository
+namespace RealEstate_DapperApi_AbdulkadirArslan.Repositories.BottomGridRepositories
 {
     public class BottomGridRepository : IBottomGridRepository
     {
+
         private readonly Context _context;
 
         public BottomGridRepository(Context context)
