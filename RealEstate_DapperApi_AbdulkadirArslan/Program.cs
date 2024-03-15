@@ -6,6 +6,7 @@ using RealEstate_DapperApi_AbdulkadirArslan.Repositories.EmployeeRepositories;
 using RealEstate_DapperApi_AbdulkadirArslan.Repositories.PopularLocationRepositories;
 using RealEstate_DapperApi_AbdulkadirArslan.Repositories.ProductRepository;
 using RealEstate_DapperApi_AbdulkadirArslan.Repositories.ServiceRepository;
+using RealEstate_DapperApi_AbdulkadirArslan.Repositories.StatisticsRepositories;
 using RealEstate_DapperApi_AbdulkadirArslan.Repositories.TestimonialRepositories;
 using RealEstate_DapperApi_AbdulkadirArslan.Repositories.WhoWeAreDetailRepository;
 
@@ -22,6 +23,7 @@ builder.Services.AddTransient<IProductRepository, ProductRepository>();
 builder.Services.AddTransient<IPopularLocationRepository, PopularLocationRepository>();
 builder.Services.AddTransient<ITestimonialRepository, TestimonialRepository>();
 builder.Services.AddTransient<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddTransient<IStatisticsRepository, StatisticsRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

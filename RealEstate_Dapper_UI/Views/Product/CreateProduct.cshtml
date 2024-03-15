@@ -14,34 +14,26 @@
                     <label>Product Title : </label>
                     <input type="text" asp-for="title" class="form-control" />
                     <br />
-                    <br />
                     <label>City : </label>
                     <input type="text" asp-for="title" class="form-control" />
-                    <br />
                     <br />
                     <label>District : </label>
                     <input type="text" asp-for="title" class="form-control" />
                     <br />
-                    <br />
                     <label>Category : </label>
                     @Html.DropDownListFor(x=>x.categoryid,(List<SelectListItem>)ViewBag.CategoryValues,new {@class="form-control"})
-                    <br />
                     <br />
                     <label>Price : </label>
                     <input type="text" asp-for="title" class="form-control" />
                     <br />
-                    <br />
                     <label>Type : </label>
                     <input type="text" asp-for="title" class="form-control" />
-                    <br />
                     <br />
                     <label>Cover Image : </label>
                     <input type="text" asp-for="title" class="form-control" />
                     <br />
-                    <br />
                     <label>Address : </label>
                     <textarea asp-for="address" class="form-control" rows="5"></textarea>
-                    <br />
                     <br />
                     <button class="btn btn-primary">Save Product</button>
                 </form>
