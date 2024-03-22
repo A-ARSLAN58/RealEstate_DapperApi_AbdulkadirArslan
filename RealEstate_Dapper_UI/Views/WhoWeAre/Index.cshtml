@@ -1,0 +1,56 @@
+﻿@model List<ResultWhoWeAreDetailDto>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Admin/Index.cshtml";
+    int count = 0;
+}
+
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-12">
+            <div class="bg-light rounded h-100 p-4">
+                <h6 class="mb-4">WhoWeAreDetail Table</h6>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Subtitle</th>
+                                <th scope="col">Description1</th>
+                                <th scope="col">Description2</th>
+                                <th scope="col">Delete</th>
+                                <th scope="col">Update</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                count++;
+                                <tr>
+                                    <th scope="row">@count</th>
+                                    <td>@item.Title</td>
+                                    <td>@item.Subtitle</td>
+                                    <td>@item.Description1</td>
+                                    <td>@item.Description2</td>
+                                    <td><a href="/WhoWeAre/DeleteWhoWeAreDetail/@item.WhoWeAreDetailID" class="btn btn-outline-danger">Delete</a></td>
+                                    <td><a href="/WhoWeAre/UpdateWhoWeAreDetail/@item.WhoWeAreDetailID" class="btn btn-outline-success">Update</a></td>
+
+                                </tr>
+                            }
+
+                        </tbody>
+
+                    </table>
+
+                    <a href="/WhoWeAre/CreateWhoWeAreDetail/" class="btn btn-outline-info">New WhoWeAre Detail</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

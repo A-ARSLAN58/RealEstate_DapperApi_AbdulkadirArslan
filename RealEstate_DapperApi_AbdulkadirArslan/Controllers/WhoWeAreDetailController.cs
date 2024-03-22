@@ -33,7 +33,7 @@ namespace RealEstate_DapperApi_AbdulkadirArslan.Controllers
             return Ok("Who We Are Added");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteWhoWeAreDetail(int id)
         {
             _whoWeAreDetailRepository.DeleteWhoWeAreDetail(id);
