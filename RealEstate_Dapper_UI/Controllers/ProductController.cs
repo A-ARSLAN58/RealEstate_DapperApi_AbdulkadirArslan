@@ -20,7 +20,7 @@ namespace RealEstate_Dapper_UI.Controllers
         {
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("https://localhost:44375/api/Products/ProductListWithCategory/");
-            if (responseMessage.IsSuccessStatusCode) 
+            if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var values = JsonConvert.DeserializeObject<List<ResultProductDto>>(jsonData);
@@ -32,14 +32,14 @@ namespace RealEstate_Dapper_UI.Controllers
         }
 
         [HttpGet]
-        
+
         public async Task<IActionResult> CreateProduct()
         {
-            var client= _httpClientFactory.CreateClient();
+            var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("https://localhost:44375/api/Categories/");
-      
-                var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values =  JsonConvert.DeserializeObject<List<ResultCategoryDto>>(jsonData);
+
+            var jsonData = await responseMessage.Content.ReadAsStringAsync();
+            var values = JsonConvert.DeserializeObject<List<ResultCategoryDto>>(jsonData);
 
 
             List<SelectListItem> categoryValues = (from x in values.ToList()
@@ -53,5 +53,29 @@ namespace RealEstate_Dapper_UI.Controllers
 
             return View();
         }
+
+        public async Task<IActionResult> ProductDealOfTheDayStatusChangeToFalse(int id)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync("https://localhost:44375/api/Products/ProductDealOfTheDayStatusChangeToFalse/" + id);
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
+            }
+            return View();
+
+        }
+
+        public async Task<IActionResult> ProductDealOfTheDayStatusChangeToTrue(int id)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync("https://localhost:44375/api/Products/ProductDealOfTheDayStatusChangeToTrue/" + id);
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
     }
 }
