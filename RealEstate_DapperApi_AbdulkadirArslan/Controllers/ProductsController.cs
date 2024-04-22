@@ -44,6 +44,13 @@ namespace RealEstate_DapperApi_AbdulkadirArslan.Controllers
             return Ok("Updated 'False'");
         }
 
+        [HttpGet("Last5ProductList")]
+        public async Task<IActionResult> Last5ProductList()
+        {
+            var values = await _productRepository.GetLast5ProductAsync();
+            return Ok(values);
+        }
+
 
 
 
