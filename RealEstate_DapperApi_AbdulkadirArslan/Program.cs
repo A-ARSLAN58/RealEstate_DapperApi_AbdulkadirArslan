@@ -1,3 +1,4 @@
+using RealEstate_DapperApi_AbdulkadirArslan.Repositories.AppUserRepositories;
 using RealEstate_DapperApi_AbdulkadirArslan.Hubs;
 using RealEstate_DapperApi_AbdulkadirArslan.Models.DapperContext;
 using RealEstate_DapperApi_AbdulkadirArslan.Repositories.BottomGridRepositories;
@@ -9,7 +10,9 @@ using RealEstate_DapperApi_AbdulkadirArslan.Repositories.EstateAgentRepositories
 using RealEstate_DapperApi_AbdulkadirArslan.Repositories.EstateAgentRepositories.DashboardRepositories.LastProductsRepositories;
 using RealEstate_DapperApi_AbdulkadirArslan.Repositories.EstateAgentRepositories.DashboardRepositories.StatisticRepositories;
 using RealEstate_DapperApi_AbdulkadirArslan.Repositories.PopularLocationRepositories;
+using RealEstate_DapperApi_AbdulkadirArslan.Repositories.ProductImageRepositories;
 using RealEstate_DapperApi_AbdulkadirArslan.Repositories.ProductRepository;
+using RealEstate_DapperApi_AbdulkadirArslan.Repositories.PropertyAmenityRepositories;
 using RealEstate_DapperApi_AbdulkadirArslan.Repositories.ServiceRepository;
 using RealEstate_DapperApi_AbdulkadirArslan.Repositories.StatisticsRepositories;
 using RealEstate_DapperApi_AbdulkadirArslan.Repositories.TestimonialRepositories;
@@ -35,6 +38,10 @@ builder.Services.AddTransient<IToDoListRepository, ToDoListRepository>();
 builder.Services.AddTransient<IStatisticRepository, StatisticRepository>();
 builder.Services.AddTransient<IChartRepository, ChartRepository>();
 builder.Services.AddTransient<ILast5ProductsRepository, Last5ProductsRepository>();
+builder.Services.AddTransient<IProductImageRepository, ProductImageRepository>();
+builder.Services.AddTransient<IAppUserRepository, AppUserRepository>();
+builder.Services.AddTransient<IPropertyAmenityRepository, PropertyAmenityRepository>();
+
 
 
 builder.Services.AddCors(opt =>

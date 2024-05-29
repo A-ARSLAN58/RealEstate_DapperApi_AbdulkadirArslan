@@ -1,7 +1,8 @@
 ﻿@model CreateProductDto
+
 @{
-    ViewData["Title"] = "CreateProduct";
-    Layout = "~/Views/Admin/Index.cshtml";
+    ViewData["Title"] = "CreateAdverts";
+    Layout = "~/Areas/EstateAgent/Views/LayoutEstateAgent/Index.cshtml";
 }
 
 <div class="container-fluid pt-4 px-4">
@@ -21,7 +22,7 @@
                     <input type="text" asp-for="District" class="form-control" />
                     <br />
                     <label>Category : </label>
-                    @Html.DropDownListFor(x=>x.ProductCategory,(List<SelectListItem>)ViewBag.CategoryValues,new {@class="form-control"})
+                    @Html.DropDownListFor(x => x.ProductCategory, (List<SelectListItem>)ViewBag.CategoryValues, new { @class = "form-control" })
                     <br />
                     <label>Price : </label>
                     <input type="text" asp-for="Price" class="form-control" />
@@ -38,7 +39,7 @@
                     <label>Description : </label>
                     <textarea asp-for="Description" class="form-control" rows="5"></textarea>
                     <br />
-                    <button class="btn btn-primary">Save Product</button>
+                    <button class="btn btn-primary">Create Product</button>
                 </form>
 
 

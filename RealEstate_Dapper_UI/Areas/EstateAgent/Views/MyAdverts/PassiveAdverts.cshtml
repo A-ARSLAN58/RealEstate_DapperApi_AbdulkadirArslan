@@ -1,6 +1,6 @@
 ﻿@model List<RealEstate_Dapper_UI.Dtos.ProductDtos.ResultProductAdvertListWithCategoryByEmployeeDto>
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "PassiveAdverts";
     Layout = "~/Areas/EstateAgent/Views/LayoutEstateAgent/Index.cshtml";
     int count = 0;
 }
@@ -9,7 +9,7 @@
     <div class="row g-4">
         <div class="col-12">
             <div class="bg-light rounded h-100 p-4">
-                <h6 class="mb-4">My Product Table</h6>
+                <h6 class="mb-4">Past Product Table</h6>
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
@@ -20,6 +20,7 @@
                                 <th scope="col">Price</th>
                                 <th scope="col">Type</th>
                                 <th scope="col">Delete</th>
+                                <th scope="col">Active</th>
                                 <th scope="col">Update</th>
                                 <th scope="col">Website</th>
 
@@ -36,6 +37,7 @@
                                     <td>@item.price</td>
                                     <td>@item.type</td>
                                     <td><a href="/Product/DeleteProduct/@item.productID" class="btn btn-outline-danger">Delete</a></td>
+                                    <td><a href="/Product/DeleteProduct/@item.productID" class="btn btn-outline-dark">Active</a></td>
                                     <td><a href="/Product/UpdateProduct/@item.productID" class="btn btn-outline-success">Update</a></td>
                                     <td><a href="/Product/ProductDetail/@item.productID" class="btn btn-outline-primary">See</a></td>
                                 </tr>
@@ -45,7 +47,7 @@
 
                     </table>
 
-                    <a href="/Product/CreateProduct/" class="btn btn-outline-info">New Product</a>
+                    <a href="/EstateAgent/MyAdverts/CreateAdverts/" class="btn btn-outline-info">New Product</a>
 
                 </div>
             </div>
